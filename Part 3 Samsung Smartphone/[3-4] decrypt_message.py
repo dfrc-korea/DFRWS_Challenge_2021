@@ -10,8 +10,8 @@ def main():
     conn = sqlite3.connect("mmssms.db")
     cursor = conn.cursor()
 
-    cursor.execute("SELECT type, address, date(strftime('%Y-%m-%d %H:%M:%S.', \"date\"/1000, 'unixepoch') || (\"date\"%1000), \"+1 hours\") as _date,\
-        datetime(strftime('%Y-%m-%d %H:%M:%S.', \"date\"/1000, 'unixepoch') || (\"date\"%1000), \"+1 hours\") as date,\
+    cursor.execute("SELECT type, address, date(strftime('%Y-%m-%d %H:%M:%S.', \"date\"/1000, 'unixepoch') || (\"date\"%1000), \"+2 hours\") as _date,\
+        datetime(strftime('%Y-%m-%d %H:%M:%S.', \"date\"/1000, 'unixepoch') || (\"date\"%1000), \"+2 hours\") as date,\
         body FROM sms")
     
     results = []
